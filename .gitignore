@@ -1,0 +1,8 @@
+<<<<<<< HEAD
+.DS_Store
+.ipynb_checkpoints
+=======
+.venv/*
+.vscode
+__pycache__
+>>>>>>> 5525483 (init prod)
