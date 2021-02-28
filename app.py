@@ -1,10 +1,6 @@
-from flask import Flask
+import nlp_service
 
-from app.routing import
+app = nlp_service.create_app()
 
-app = Flask(__name__)
-
-
-@app.route('/')
-def index():
-    return "Hello World!"
+if __name__ == '__main__':
+    app.run(debug=True)

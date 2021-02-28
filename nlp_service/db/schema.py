@@ -1,16 +1,13 @@
-import datetime
+from .base import BaseModel
 
+from sqlalchemy import Column
 from sqlalchemy.ext.declarative import declarative_base
-from sqlalchemy import Column, Integer, TIMESTAMP
+from sqlalchemy.sql.sqltypes import TIMESTAMP, INTEGER, VARCHAR
 
-Base = declarative_base()
+class Employee(BaseModel):
+    __tablename__ = 'employees'
 
-class BaseModel(Base):
-    __abstract__ = True
-
-    id = Column(Integer, nullable=False, unique=True, primary_key=True, autoincrement=True)
-    created_at = Column(TIMESTAMP, nullable=False)
-    updated_at = Column(TIMESTAMP, nullable=False)
-
-    def __repr__(self):
-        return "<{0.__class__.__name__}(id={0.id!r})>".format(self)
+    first_name = Column(VARCHAR(255), nullable=False)
+    last_name = Column(VARCHAR(255), nullable=False)
+    phone = Column(VARCHAR(255), unique=True, nullable=True)
+    description = Column(VARCHAR(255), nullable=True)

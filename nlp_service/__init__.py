@@ -25,3 +25,6 @@ def create_app(test_config=None):
         pass
 
     return app
+
+def create_db():
+    pass
