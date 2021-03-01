@@ -2,7 +2,7 @@
 
 ## Instalation:
 For arch:
-```console
+```sh
 # Clone repo
 $ git clone git@github.com:powersemmi/nlp_service.git && cd nlp_service
 # Install virtualenv
