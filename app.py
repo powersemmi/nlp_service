@@ -1,6 +1,19 @@
-import nlp_service
+#! /usr/bin/python3.8
 
-app = nlp_service.create_app()
+from flask import Flask
+from flask_sqlalchemy import SQLAlchemy
+from flask_migrate import Migrate
+
+import nlp_service
+from config import Config
+
+
 
 if __name__ == '__main__':
-    app.run(debug=True)
+    nlp_service.app = nlp_service.create_app(Config)
+    nlp_service.db = nlp_service.create_db(nlp_service.app)
+    migrate = Migrate(nlp_service.app, nlp_service.db)
+
+    from nlp_service.routing import *
+
+    nlp_service.app.run()

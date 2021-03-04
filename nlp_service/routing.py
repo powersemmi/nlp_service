@@ -1,5 +1,4 @@
-from flask import current_app as app
-
+from nlp_service import app
 
 @app.route('/')
 def index():
