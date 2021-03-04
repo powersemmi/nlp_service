@@ -1,4 +1,4 @@
-#! /usr/bin/python3.8
+#!/usr/bin/env python3.8
 
 from flask import Flask
 from flask_sqlalchemy import SQLAlchemy
