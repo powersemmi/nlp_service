@@ -1,5 +1,6 @@
-from nlp_service import app
+from app import app
 
 @app.route('/')
+@app.route('/index')
 def index():
     return "Hello World!"
