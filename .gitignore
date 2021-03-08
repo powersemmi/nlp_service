@@ -3,7 +3,7 @@ __pycache__/
 *.py[cod]
 *$py.class
 docker/postgres/data/
-migrations
+migrations/
 
 .vscode/
 # C extensions
