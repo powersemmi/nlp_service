@@ -9,7 +9,7 @@ def index():
 @app.route('/_test____conn', methods=['GET', 'POST', 'HEAD', 'PUT', 'DELETE'])
 def test_conn():
     if request.method == "GET":
-        pass
+        return "OK"
     elif request.method == "POST":
         pass
     elif request.method == "HEAD":
@@ -18,5 +18,3 @@ def test_conn():
         pass
     elif request.method == "DELETE":
         pass
-    else:
-        return "OK"

@@ -5,7 +5,31 @@
     "version": "0.2.0",
     "configurations": [
         {
-            "name": "Python: Flask",
+            "name": "db init",
+            "type": "python",
+            "request": "launch",
+            "program": "./nlp_service.py",
+            "console": "integratedTerminal",
+            "args": ["db", "init"]
+        },
+        {
+            "name": "db migrate",
+            "type": "python",
+            "request": "launch",
+            "program": "./nlp_service.py",
+            "console": "integratedTerminal",
+            "args": ["db", "migrate"]
+        },
+        {
+            "name": "db upgrade",
+            "type": "python",
+            "request": "launch",
+            "program": "./nlp_service.py",
+            "console": "integratedTerminal",
+            "args": ["db", "upgrade"]
+        },
+        {
+            "name": "Start dev server",
             "type": "python",
             "request": "launch",
             "module": "flask",

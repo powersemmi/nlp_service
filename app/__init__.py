@@ -8,4 +8,5 @@ app: Flask = Flask(__name__)
 app.config.from_object(Config)
 db: SQLAlchemy = SQLAlchemy(app)
 
+from app.shema import models
 from app import routes

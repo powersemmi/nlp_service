@@ -1,21 +1,21 @@
 import uuid
 import hashlib
 
-from sqlalchemy import Column
 from sqlalchemy.ext.declarative import declarative_base
 from sqlalchemy.sql.sqltypes import String
 
-from .base import BaseModel
+from sqlalchemy.sql.schema import MetaData
+from .base import BaseModel, db
 
 class Users(BaseModel):
     __tablename__ = 'users'
 
-    username = Column(String(64), unique=True, nullable=False)
-    password = Column(String(120), nullable=False)
-    email = Column(String(64), unique=True, nullable=False)
-    first_name = Column(String(100), nullable=True)
-    last_name = Column(String(100), nullable=True)
-    phone = Column(String(14), unique=True, nullable=True)
+    username = db.Column(String(64), unique=True, nullable=False)
+    password = db.Column(String(120), nullable=False)
+    email = db.Column(String(64), unique=True, nullable=False)
+    first_name = db.Column(String(100), nullable=True)
+    last_name = db.Column(String(100), nullable=True)
+    phone = db.Column(String(14), unique=True, nullable=True)
 
     def __repr__(self):
         return f'{self.id} {self.email} {self.username}'
@@ -34,6 +34,4 @@ class Users(BaseModel):
     #     salt = uuid.uuid4().hex
     #     return hashlib.sha256(salt.encode() + password.encode()).hexdigest() + ':' + salt
 
-if __name__ == '__main__':
-    metadata = MetaData()
-    users = Users()
+    

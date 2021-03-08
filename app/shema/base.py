@@ -3,7 +3,7 @@ from logging import getLogger
 from sqlalchemy.exc import IntegrityError, DataError
 from sqlalchemy.orm import Session
 
-from ..db.models.base import BaseModel
+from app.shema.models import BaseModel
 
 log = getLogger()
 

@@ -1,10 +1,10 @@
+from app import db
+
 from sqlalchemy import Column
 from sqlalchemy.ext.declarative import declarative_base
 from sqlalchemy.sql.sqltypes import TIMESTAMP, INTEGER, VARCHAR
 
-Base = declarative_base()
-
-class BaseModel(Base):
+class BaseModel(db.Model):
     __abstract__ = True
 
     id = Column(INTEGER, nullable=False, unique=True, primary_key=True, autoincrement=True)
