@@ -8,23 +8,23 @@ from app.shema.models import BaseModel
 log = getLogger()
 
 
-class DBSession(object):
+class DBSession:
 
     _session: Session
 
-    def __init__(self, session: Session, *args, **kwargs):
+    def __init__(self, session: Session, *args, **kwargs) -> None:
         self._session = session
 
     def query(self, *entities, **kwargs):
         return self._session.query(*entities, **kwargs)
 
-    def add_model(self, model: BaseModel, need_flush: bool = False):
+    def add_model(self, model: BaseModel, need_flush: bool = False) -> None:
         self._session.add(model)
 
         if need_flush:
             self._session.flush([model])
 
-    def delete_model(self, model: BaseModel):
+    def delete_model(self, model: BaseModel) -> None:
         if model is None:
             log.warning(f'{__name__}: model is None')
 
@@ -35,7 +35,7 @@ class DBSession(object):
         except DataError as e:
             log.error(f'`{__name__}` {e}')
 
-    def commit_session(self, need_close: bool = False):
+    def commit_session(self, need_close: bool = False) -> None:
         try:
             self._session.commit()
         except IntegrityError as e:
@@ -48,7 +48,7 @@ class DBSession(object):
         if need_close:
             self.close_session()
 
-    def close_session(self):
+    def close_session(self) -> None:
         try:
             self._session.close()
         except IntegrityError as e:
