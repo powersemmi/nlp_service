@@ -1,8 +1,9 @@
-from app import db
-
+from flask_sqlalchemy import SQLAlchemy
 from sqlalchemy import Column
 from sqlalchemy.ext.declarative import declarative_base
 from sqlalchemy.sql.sqltypes import TIMESTAMP, INTEGER, VARCHAR
+
+from app import db
 
 class BaseModel(db.Model):
     __abstract__ = True

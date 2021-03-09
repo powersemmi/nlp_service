@@ -1,3 +1,1 @@
-from .models import *
-from .queries import *
-from .base import BaseModel
+from .base import DBSession

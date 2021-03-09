@@ -1,0 +1,7 @@
+[MASTER]
+ignore=static,templates
+[BASIC]
+good-names=
+    i,
+    e,
+    logger,
