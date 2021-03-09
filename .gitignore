@@ -5,7 +5,6 @@ __pycache__/
 docker/postgres/data/
 migrations/
 
-.vscode/
 # C extensions
 *.so
 
