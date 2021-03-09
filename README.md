@@ -9,7 +9,7 @@ $ git clone git@github.com:powersemmi/nlp_service.git && cd nlp_service
 # Install requarements
 $ pip install -r req.txt
 # Edit configure file
-$ vim config.py
+$ vim .env
 # Up postgres and adminer docker containers
 $ cd docker/postgres && docker-compose up -d && cd ../../
 # Run tests
