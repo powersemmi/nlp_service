@@ -8,5 +8,12 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
+    - uses: actions/checkout@v2  
     - name: Python Linter
-      uses: sunnysid3up/python-linter@v0.1-beta.7
+      uses: sunnysid3up/python-linter@master
+      with:
+        source: "app"
+        mypy-options: "--ignore-missing-imports --show-error-codes"
+        pylint-options: "--rcfile=setup.cfg"
+        isort-options: "-w 100",
+        django: true
